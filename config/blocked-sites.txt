@@ -1,0 +1,9 @@
+# SeeUat4 - Blocked domains
+# One domain per line
+
+youtube.com
+www.youtube.com
+m.youtube.com
+music.youtube.com
+youtu.be
+youtube-nocookie.com

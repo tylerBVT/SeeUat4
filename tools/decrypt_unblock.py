@@ -27,8 +27,8 @@ LOCKOUT_FILE = ROOT / "state" / "decrypt_lockout.json"
 STATUS_FILE = ROOT / "state" / "status.json"
 LOG_FILE = ROOT / "logs" / "SeeUat4.log"
 
-LOCKOUT_SECONDS = 2 * 60  # after a wrong password
-WAIT_SECONDS = 2 * 60  # after a correct first password
+LOCKOUT_SECONDS = 20 * 60  # after a wrong password
+WAIT_SECONDS = 20 * 60  # after a correct first password
 KEEP_SECONDS = 5 * 60
 
 

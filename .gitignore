@@ -1,0 +1,4 @@
+# Decrypted unblock command (temporary, must never be committed)
+config/unblock-command.txt
+state/decrypt_lockout.json
+__pycache__/

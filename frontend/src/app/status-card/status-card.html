@@ -1,0 +1,10 @@
+<section class="card" [class.locked]="state().mode === 'LOCKED'" [class.unlocked]="state().mode === 'UNLOCKED'">
+  <h2>Status</h2>
+  <p class="badge">{{ state().mode === 'LOCKED' ? 'LOCKED' : 'UNLOCKED' }}</p>
+  <p class="hint">
+    {{ state().mode === 'LOCKED' ? 'YouTube is blocked.' : 'YouTube is accessible.' }}
+  </p>
+  @if (state().lastUnlockedAt) {
+    <p class="small">Last unlock: {{ state().lastUnlockedAt | date: 'medium' }}</p>
+  }
+</section>

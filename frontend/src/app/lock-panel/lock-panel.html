@@ -1,0 +1,13 @@
+<section class="card" [class.disabled]="!enabled()">
+  <h2>Lock</h2>
+  @if (enabled()) {
+    <ol>
+      <li>Open PowerShell as <strong>Administrator</strong>.</li>
+      <li>Paste this command and press Enter.</li>
+    </ol>
+    <pre>{{ command() }}</pre>
+    <button type="button" (click)="copy()">{{ copied() ? 'Copied!' : 'Copy command' }}</button>
+  } @else {
+    <p class="hint">Already locked.</p>
+  }
+</section>

@@ -2,3 +2,6 @@
 config/unblock-command.txt
 state/decrypt_lockout.json
 __pycache__/
+frontend/node_modules/
+frontend/dist/
+frontend/.angular/

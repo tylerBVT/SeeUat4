@@ -1,0 +1,15 @@
+<main>
+  <h1>SeeUat4</h1>
+
+  @if (api.offline()) {
+    <p class="offline">Cannot reach the server. Start it with <code>py server\server.py</code>.</p>
+  }
+
+  @if (api.state(); as s) {
+    <app-status-card [state]="s" />
+    <app-lock-panel [enabled]="s.mode === 'UNLOCKED'" [command]="s.lockCommand" />
+    <app-unlock-panel [enabled]="s.mode === 'LOCKED'" [unlock]="s.unlock" />
+  } @else if (!api.offline()) {
+    <p>Loading...</p>
+  }
+</main>

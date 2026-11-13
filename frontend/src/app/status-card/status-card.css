@@ -1,0 +1,14 @@
+.card { text-align: center; }
+.badge {
+  display: inline-block;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  padding: 0.4rem 1.5rem;
+  border-radius: 999px;
+  margin: 0.5rem 0;
+}
+.locked .badge { background: #1f7a3d; color: #fff; }
+.unlocked .badge { background: #b3261e; color: #fff; }
+.hint { margin: 0.25rem 0; }
+.small { color: var(--muted); font-size: 0.85rem; margin: 0.25rem 0 0; }

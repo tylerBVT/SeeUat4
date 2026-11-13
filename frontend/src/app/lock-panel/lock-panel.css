@@ -1,0 +1,11 @@
+.card.disabled { opacity: 0.5; }
+pre {
+  background: var(--code-bg);
+  padding: 0.75rem;
+  border-radius: 6px;
+  white-space: pre-wrap;
+  word-break: break-all;
+  font-size: 0.85rem;
+}
+ol { padding-left: 1.2rem; margin: 0 0 0.75rem; }
+.hint { margin: 0; }

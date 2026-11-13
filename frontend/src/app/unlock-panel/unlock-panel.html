@@ -1,0 +1,50 @@
+<section class="card" [class.disabled]="!enabled()">
+  <h2>Unlock</h2>
+
+  @if (!enabled()) {
+    <p class="hint">Already unlocked.</p>
+  } @else {
+    @switch (unlock().phase) {
+      @case ('lockout') {
+        <p class="error">Locked out. Try again in <strong>{{ mmss(unlock().secondsLeft) }}</strong>.</p>
+      }
+      @case ('waiting') {
+        <p>Password accepted. Confirm it again in:</p>
+        <p class="timer">{{ mmss(unlock().secondsLeft) }}</p>
+      }
+      @case ('unlocked') {
+        <p>Open PowerShell as <strong>Administrator</strong> and paste:</p>
+        <pre>{{ unlock().command }}</pre>
+        <button type="button" (click)="copy(unlock().command ?? '')">
+          {{ copied() ? 'Copied!' : 'Copy command' }}
+        </button>
+        <p class="small">This command disappears in {{ mmss(unlock().secondsLeft) }}.</p>
+      }
+      @default {
+        <p>
+          @if (unlock().phase === 'confirm') {
+            Type the password again to confirm.
+          } @else {
+            Type the password phrase exactly.
+          }
+        </p>
+        <form (submit)="$event.preventDefault(); submit()">
+          <input
+            type="text"
+            autocomplete="off"
+            spellcheck="false"
+            placeholder="Password"
+            [value]="password()"
+            (input)="onInput($event)"
+          />
+          <button type="submit" [disabled]="busy() || !password().trim()">
+            {{ unlock().phase === 'confirm' ? 'Confirm' : 'Unlock' }}
+          </button>
+        </form>
+      }
+    }
+    @if (error()) {
+      <p class="error">{{ error() }}</p>
+    }
+  }
+</section>

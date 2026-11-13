@@ -42,3 +42,4 @@
 2026-11-13 12:29:24 - DECRYPT SUCCESS - unblock-command.txt written, status UNLOCKED
 2026-11-13 12:29:36 - DECRYPT unblock-command.txt deleted
 2026-11-13 12:29:41 - DECRYPT WRONG PASSWORD - 2 minute lockout started
+2026-11-13 13:34:14 - UI WRONG PASSWORD - 20 minute lockout started
